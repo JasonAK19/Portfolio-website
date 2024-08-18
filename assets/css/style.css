@@ -187,7 +187,7 @@ img {
   left: 0;
   width: 100%;
   z-index: var(--z-fixed);
-  background-color: var(--first-color);
+  background-color: transparent;
   box-shadow: 0 2px 4px var(--shadow-color);
   transition: background-color .4s, box-shadow .4s;
 }
@@ -268,6 +268,15 @@ img {
 }
 
 /* Change background header */
+.bg-header {
+  background-color: var(--body-color);
+  box-shadow: 0 2px 16px var(--shadow-color);
+}
+
+.bg-header :is(.nav__logo, .nav__toggle) {
+  color: var(--title-color);
+}
+
 .header-pages{
   background-color: var(--body-color);
 }
@@ -354,6 +363,10 @@ margin-top: 20px;
 
 .home__social-link:hover {
   color: var(--first-color);
+}
+
+.home__button{
+  justify-self: center;
 }
 /*=============== ABOUT ==============*/
 
