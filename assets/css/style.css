@@ -545,7 +545,9 @@ row-gap: 2rem;
   font-size: var(--h2-font-size);
   margin-bottom: .25rem;
 }
-
+.projects__page{
+  padding-bottom: 4rem;
+}
 /*=============== TESTIMONIAL ===============*/
 
 
