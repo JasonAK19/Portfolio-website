@@ -508,8 +508,43 @@ row-gap: 2rem;
   
 }
 
-/*=============== WORK ===============*/
+/*=============== PROJECTS ===============*/
+.projects__container{
+  row-gap: 2rem;
+}
+.projects__link{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.projects__img{
+  filter: grayscale(1);
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  transition: filter .5s, transform .45s;
+}
+.projects__icon{
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 2rem;
+  color: var(--first-color);
+  transition: transform .4s;
+}
 
+.projects__link:hover .projects__img{
+  transform: scale(1.1);
+  filter: none;
+}
+.projects__link:hover .projects__icon{
+  transform: translate(.5rem, -.5rem) rotate(-30deg);
+}
+.projects__title{
+  font-size: var(--h2-font-size);
+  margin-bottom: .25rem;
+}
 
 /*=============== TESTIMONIAL ===============*/
 
