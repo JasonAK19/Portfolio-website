@@ -117,17 +117,46 @@ img {
 }
 
 /*=============== THEME ===============*/
-
+.nav__actions {
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+.change-theme {
+  font-size: 1.25rem;
+  color: var(--white-color);
+  cursor: pointer;
+  transition: color .4s;
+}
 
 /*========== Variables Dark theme ==========*/
-
+body.dark-theme{
+  --title-color: hsl(var(--hue), 24%, 85%);
+  --text-color: hsl(var(--hue), 8%, 70%);
+  --body-color: hsl(var(--hue), 16%, 8%);
+  --container-color: hsl(var(--hue), 16%, 12%);
+  --shadow-color: hsla(var(--hue), 32%, 4%, .4);
+}
 
 /*========== 
 	Color changes in some parts of 
 	the website, in dark theme
 ==========*/
-
-
+.dark-theme .bg-header{
+  box-shadow: 0 12px 24px var(--shadow-color);
+}
+.dark-theme .course__modal{
+  background-color: hsla(var(--hue), 90%, 8%, .2);
+}
+.dark-theme::-webkit-scrollbar{
+  background-color: hsl(var(--hue), 16%, 15%);
+}
+.dark-theme::-webkit-scrollbar-thumb{
+  background-color: hsl(var(--hue), 16%, 25%);
+}
+.dark-theme::webkit-scrollbar-thumb:hover{
+  background-color: hsl(var(--hue), 16%, 35%);
+}
 /*=============== REUSABLE CSS CLASSES ===============*/
 .container {
   max-width: 1120px;
@@ -273,14 +302,14 @@ img {
   box-shadow: 0 2px 16px var(--shadow-color);
 }
 
-.bg-header :is(.nav__logo, .nav__toggle) {
+.bg-header :is(.nav__logo, .nav__toggle, .change-theme) {
   color: var(--title-color);
 }
 
 .header-pages{
   background-color: var(--body-color);
 }
-.header-pages :is(.nav__logo, .nav__toggle) {
+.header-pages :is(.nav__logo, .nav__toggle, .change-theme) {
   color: var(--title-color);
 }
 /* Header background color of other pages */
@@ -332,7 +361,9 @@ img {
 .home__perfil{
   justify-self: center;
 }
-
+.home__content{
+  row-gap: 3rem;
+}
 .home__data{
   row-gap: .75rem;
   text-align: center;
@@ -671,23 +702,192 @@ padding-bottom: 4rem;
 
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+  width: .6rem;
+  background-color: hsl(var(--hue), 20%, 85%);
+}
+::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--hue), 20%, 65%);
+}
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(var(--hue), 20%, 55%);
+}
 
 
 /*=============== SCROLL UP ===============*/
+.scrollup {
+  position: fixed;
+  bottom: -50%;
+  right: 1rem;
+  background-color: var(--container-color);
+  box-shadow: 0 12px 24px var(--shadow-color);
+  display: inline-flex;
+  padding: 6px;
+  font-size: 1.25rem;
+  z-index: var(--z-tooltip);
+  color: var(--title-color);
+  border-radius: .5rem;
+  transition: bottom .4s, background-color .4s, transform .4s;
+}
+
+.scrollup:hover {
+  transform: translateY(-.5rem);
+}
 
 
 /* Show Scroll Up */
+.show-scroll {
+  bottom: 3rem;
+}
 
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
+@media screen and (max-width: 320px) {
+  .container{
+    margin-inline: 1rem;
+  }
+  .course__modal{
+    padding-inline: .5rem;
+  }
+  .about__skills-content{
+    grid-template-columns: repeat(4, max-content);
+  }
+
+}
 
 
 /* For medium devices */
+@media screen and (min-width: 576px){
+  .course__container{
+    grid-template-columns: 320px;
+    justify-content: center;
+  }
+  .course__modal-content{
+    width: 400px;
+  }
 
+  .projects__container{
+    grid-template-columns: 350px;
+    justify-content: center;
+  }
+
+  .about__container{
+    grid-template-columns: 400px;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (min-width: 768px){
+  .course__container{
+    grid-template-columns: repeat(2, 320px);
+    justify-content: center;
+  }
+  .projects__container{
+    grid-template-columns: repeat(2, 350px);
+  }
+
+  /*Future Implentation*
+  /*
+  .projects__container{
+    max-width: 700px;
+    margin-inline: auto;
+  }
+  .projects__description{
+    width: 470px;
+    margin-inline: auto;
+  }
+  */
+  .contact__page{
+    grid-template-columns: 670px;
+    justify-content: center;
+  }
+  .contact__group{
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+  }
+  .contact__area{
+    height: 18rem;
+  }
+  .contact__message{
+    bottom: 5rem;
+  }
+  .contact__send{
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+}
 
 /* For large devices */
+@media screen and (min-width: 992px) {
+  .container {
+    margin-inline: auto;
+  }
+  .course__container {
+    grid-template-columns: repeat(3, 345px);
+  }
+  .course__card {
+    padding-block: 4.5rem;
+  }
+  .course__modal-content {
+    max-height: 480px;
+    padding: 5.5rem 2rem;
+  }
+  .course__modal-close {
+    font-size: 2rem;
+  }
+  .projects__container {
+    grid-template-columns: repeat(3, 350px);
+  }
+  .about__container {
+    grid-template-columns: repeat(3, 400px);
+  }
 
+  .contact__page {
+    display: grid;
+    justify-content: center; 
+    align-items: center;
+    margin: 0 auto; 
+    max-width: 1340px; 
+  }
 
+  .contact__form {
+    display: grid;
+    justify-items: center; 
+    gap: 1.5rem; 
+  }
+
+  .contact__group {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 1rem;
+    width: 100%; 
+  }
+
+  .contact__box {
+    width: 100%; 
+  }
+
+  .contact__area {
+    height: 18rem;
+    width: 100%; 
+  }
+
+  .contact__send {
+    justify-self: center;
+    margin-top: 1.5rem;
+  }
+
+  /* Centering course modal content */
+  .course__modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .course__modal-content {
+    margin: auto;
+  }
+}
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
 
