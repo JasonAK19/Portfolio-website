@@ -578,10 +578,61 @@ row-gap: 2rem;
 .projects__page{
   padding-bottom: 4rem;
 }
-/*=============== TESTIMONIAL ===============*/
-
-
+/*=============== PROJECT SWIPER ===============*/
+.brojects__container{
+position: relative;
+}
+.brojects__swiper{
+  padding-bottom: 2rem;
+}
+.brojects__card{
+  background-color: var(--container-color);
+  padding: 2rem 1.25rem 2.5rem 1.25;
+  border-inline: 8px solid var(--first-color);
+  box-shadow: 0 12px 24px var(--shadow-color); 
+  text-align: center;
+  transition: background-color .4s; 
+}
+.brojects__border{
+  width: 250px;
+  height: 250px;
+  border: 6px solid var(--first-color);
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+.brojects__img{
+  filter: grayscale(1);
+  transition: filter .4s;
+}
+.broject__name{
+  font-size: var(--h2-font-size);
+  margin-bottom: .5rem;
+}
+.brojects__card:hover .brojects__img{
+  filter: none;
+}
+.brojects__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /
+}
+.brojects__link {
+  display: block;
+  color: inherit; /* Ensure the text color is inherited */
+  text-decoration: none; /* Remove underline from links */
+}
 /* Swiper class */
+.swiper-pagination-bullets.swiper-pagination-bullets-horizonal{
+  bottom: -1rem;
+}
+.swiper-pagination-bullet{
+  background-color: var(--first-color-light);
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: var(--first-color);
+}
 
 
 /*=============== CONTACT ===============*/
@@ -790,18 +841,16 @@ padding-bottom: 4rem;
   .projects__container{
     grid-template-columns: repeat(2, 350px);
   }
-
-  /*Future Implentation*
-  /*
-  .projects__container{
+  
+  .brojects__container{
     max-width: 700px;
     margin-inline: auto;
   }
-  .projects__description{
+  .brojects__description{
     width: 470px;
     margin-inline: auto;
   }
-  */
+  
   .contact__page{
     grid-template-columns: 670px;
     justify-content: center;
@@ -965,15 +1014,16 @@ padding-bottom: 4rem;
     row-gap: 1rem;
     text-align:initial;
   }
-  .projects__card{
+  */
+  .brojects__card{
   padding-block: 3rem 3.5rem;
   }
-  .projects__border{
+  .brojects__border{
     width:120px;
     height:120px;
     margin-bottom: 1.5rem;
   }
-    */
+    
 }
 
 @media screen and (min-width: 1500px){
@@ -998,5 +1048,13 @@ padding-bottom: 4rem;
   }
   .home__rectangle{
     width: 23vw;
+  }
+}
+
+@media screen and (min-width: 1150px) {
+  .home .perfil__content {
+    position: relative;
+    top: 30px; 
+    left: 55px; 
   }
 }

@@ -10,7 +10,7 @@
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 
    <!--=============== SWIPER CSS ===============-->
-   <link rel="stylesheet" href="">
+   <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
 
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="assets/css/style.css">
@@ -333,45 +333,60 @@
             </div>
       </section>
 
-      <!--==================== PROJECTS ====================-->
-      <section class="projects section">
-         <h2 class="section__title">My Recent Projects</h2>
+      <!--==================== PROJECT SWIPER ====================-->
+      <section class="brojects section">
+        <h2 class="section__title">My Recent Projects</h2>
+    
+        <div class="brojects__container container">
+            <div class="brojects__swiper swiper"> 
+                <div class="swiper-wrapper">
+                    <article class="brojects__card swiper-slide">
+                        <a href="https://github.com/JasonAK19/Winter2024Project" target="_blank" class="brojects__link">
+                        <div class="brojects__border">
+                            <img src="assets/img/fpsw2024.png" alt="image" class="brojects__img">
+                        </div>
+                        <h2 class="broject__name">First Person raycasting game</h2>
+                        <p class="broject__description">Python First-Person Game: Developed using advanced techniques with the Pygame library such as floor casting, 
+                            raycasting, AI implementation, and random map generation.
+                        </p>
+                        </a>
+                    </article>
 
-         <div class="projects__container container grid">
-            <article class="projects__card">
-               <a href="https://github.com/JasonAK19/Winter2024Project" class="projects__link">
-                   <img src="assets/img/fpsw2024.png" alt="image" class="projects__img">
-                   <i class="ri-arrow-right-circle-line projects__icon"></i>
-               </a>
-               <h2 class="projects__title">First Person raycasting game</h2>
-               <span class="projects__subtitle">Python, Pygame Library</span>
-           </article>
+                    <article class="brojects__card swiper-slide">
+                        <a href="https://github.com/JasonAK19/School-Life" target="_blank" class="brojects__link">
 
-            <article class="projects__card">
-               <a href="https://github.com/JasonAK19/School-Life" class="projects__link">
-                  <img src="assets/img/skewllife.png" alt="image" class="projects__img">
-                  <i class="ri-arrow-right-circle-line projects__icon"></i>
-               </a>
-               <h2 class="projects__title">School life (top-down rpg)</h2>
-               <span class="projects__subtitle">JavaScript</span>
-            </article>
+                        <div class="brojects__border">
+                            <img src="assets/img/skewllife.png" alt="image" class="brojects__img">
+                        </div>
+                        <h2 class="broject__name">School life (Top down rpg) </h2>
+                        <p class="broject__description">
+                            A Java-based RPG to simulate the college experience for incoming freshmen. The game employs Object-Oriented Design
+                            for modular code and features dynamic decision trees, random events, and time/resource management.
 
-            <article class="projects__card">
-               <a href="https://github.com/JasonAK19/Portfolio-website" class="projects__link">
-                  <img src="assets/img/porfolio.png" alt="image" class="projects__img">
-                  <i class="ri-arrow-right-circle-line projects__icon"></i>
-               </a>
-               <h2 class="projects__title">This website</h2>
-               <span class="projects__subtitle">HTML,CSS,JavaScript</span>
-            </article>
-         </div>
-            
+                        </p>
+                        </a>
+                    </article>  
 
-      </section>
+                    <article class="brojects__card swiper-slide">
+                        <a href="https://github.com/JasonAK19/Portfolio-website" target="_blank" class="brojects__link">
 
-      <!--==================== TESTIMONIAL ====================-->
-      <section class="testimonial section">
-      </section>
+                        <div class="brojects__border">
+                            <!-- Check if the image path is correct -->
+                            <img src="assets/img/porfolio.png" alt="image" class="brojects__img">
+                        </div>
+                        <h2 class="broject__name">This website</h2>
+                        <p class="broject__description">
+                            Personal Portfolio Website: Designed and developed using HTML, CSS, and JavaScript. 
+                            Features a responsive layout, interactive animations, and a clean, modern design.
+                        </p>
+                        </a>
+                    </article>   
+
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
 
       <!--==================== CONTACT ====================-->
       <section class="contact section">
@@ -425,7 +440,7 @@
    <script src="assets/js/main.js"></script>
 
    <!--=============== SWIPER JS ===============-->
-   <script src=""></script>
+   <script src="assets/js/swiper-bundle.min.js"></script>
 
    <!--=============== INDEX JS ===============-->
    <script src="assets/js/index.js"></script>

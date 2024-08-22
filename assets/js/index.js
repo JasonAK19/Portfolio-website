@@ -20,7 +20,19 @@ modalCloses.forEach((modalClose, i) => {
     });
 });
 
-/*=============== SWIPER TESTIMONIAL ===============*/
+/*=============== SWIPER ===============*/
+const swiperProject = new Swiper('.brojects__swiper', {
+    loop: true,
+    spaceBetween: 32,
+    grabCursor: true,
+  
+    pagination: {
+      el: '.swiper-pagination',
+      dynameicBullets: true,
+      clickable: true,
+    },
+
+  });
 
 
 /*=============== SHOW SCROLL UP ===============*/ 
