@@ -336,7 +336,6 @@ body.dark-theme{
   opacity: 0; 
 }
 
-
 .home{
   position: relative;
   border-bottom: 8px solid var(--first-color);
@@ -863,6 +862,14 @@ padding-bottom: 4rem;
     width: 360px;
     height: 360px;
     border-width: 20px;
+
+  }
+  .home-page .perfil__content {
+    width: 360px;
+    height: 360px;
+    border-width: 20px;
+    margin-left: auto;
+    transform: translate(60px); 
   }
   .projects__img{
     width: 300px;
